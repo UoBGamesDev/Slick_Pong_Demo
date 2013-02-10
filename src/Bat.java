@@ -24,7 +24,7 @@ public class Bat extends GameComponent implements Entity
 	@Override
 	public void update()
 	{
-		BatInstructions instructions = batController.getNextInstructions();
+		BatInstructions instructions = batController.getNextInstructions(this);
 		
 		if(ball != null && (Float.compare(instructions.movementY, 0) != 0))
 		{

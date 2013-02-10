@@ -13,7 +13,7 @@ public class PlayerInputBatController implements IBatController
 	}
 
 	@Override
-	public BatInstructions getNextInstructions()
+	public BatInstructions getNextInstructions(Bat bat)
 	{
 		float movementY = 0;
 		

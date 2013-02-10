@@ -22,7 +22,7 @@ public class Main extends BasicGame
 		Ball ball = new Ball(gc);
 		gameComponents.add(ball);
 		gameComponents.add(new Bat(gc, new PlayerInputBatController(gc), 10, ball));
-		gameComponents.add(new Bat(gc, new PlayerInputBatController(gc), GameContainerConstants.ContainerWidth - 30, null));
+		gameComponents.add(new Bat(gc, new AIBatController(ball), GameContainerConstants.ContainerWidth - 30, null));
 		gameComponents.add(new PhysicsProcessor(gc));
 
 	}
@@ -30,12 +30,10 @@ public class Main extends BasicGame
 	@Override
 	public void update(GameContainer gc, int delta) throws SlickException
 	{
-		
 		for(GameComponent gameComponent : gameComponents)
 		{
 			gameComponent.update();
-		}
-		
+		}		
 	}
 
 	@Override
