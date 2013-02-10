@@ -1,0 +1,5 @@
+
+interface IBatController
+{
+	BatInstructions getNextInstructions();
+}
