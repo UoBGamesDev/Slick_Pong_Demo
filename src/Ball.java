@@ -14,6 +14,7 @@ public class Ball extends GameComponent implements Entity
 		ball = new Image("content/ball.png");
 		velocity = Vector.Zero();
 		position = centerOfWindow();
+		startMoving();
 	}
 
 	private Vector centerOfWindow()
@@ -40,6 +41,7 @@ public class Ball extends GameComponent implements Entity
 		{
 			position = centerOfWindow();
 			velocity = Vector.Zero();
+			startMoving();
 		}
 	}
 
@@ -50,11 +52,18 @@ public class Ball extends GameComponent implements Entity
 
 	}
 
-	public void startMoving()
+	private void startMoving()
 	{
 		if (velocity.equals(Vector.Zero()))
 		{
-			velocity.x = -0.7f;
+			if (Math.random() < 0.5f)
+			{
+				velocity.x = -0.7f;
+			}
+			else
+			{
+				velocity.x = 0.7f;
+			}
 		}
 	}
 

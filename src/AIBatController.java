@@ -1,17 +1,11 @@
 public class AIBatController implements IBatController
 {
 
-	Ball ball;
-
-	public AIBatController(Ball ball)
-	{
-		this.ball = ball;
-	}
 
 	@Override
 	public BatInstructions getNextInstructions(Bat bat)
 	{
-		float difference = ball.getCollisionMask().centerY()
+		float difference = Main.ball.getCollisionMask().centerY()
 				- bat.getCollisionMask().centerY();
 
 		if (difference > 0.5f)

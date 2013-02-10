@@ -10,6 +10,7 @@ import org.newdawn.slick.SlickException;
 public class Main extends BasicGame
 {
 	static List<GameComponent>gameComponents = new ArrayList<GameComponent>();
+	public static Ball ball; 
 	
 	public Main()
 	{
@@ -19,10 +20,10 @@ public class Main extends BasicGame
 	@Override
 	public void init(GameContainer gc) throws SlickException
 	{
-		Ball ball = new Ball(gc);
+		ball = new Ball(gc);
 		gameComponents.add(ball);
 		gameComponents.add(new Bat(gc, new PlayerInputBatController(gc), 10, ball));
-		gameComponents.add(new Bat(gc, new AIBatController(ball), GameContainerConstants.ContainerWidth - 30, null));
+		gameComponents.add(new Bat(gc, new AIBatController(), GameContainerConstants.ContainerWidth - 30, ball));
 		gameComponents.add(new PhysicsProcessor(gc));
 
 	}
