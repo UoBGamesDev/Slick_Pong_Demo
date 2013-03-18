@@ -7,5 +7,9 @@
 Contains a Update and a Render method, the main loop calls them in it's Update and Render method
 </p>
 
+<p>
+Contains a Update and a Render method, the main loop calls them in it's Update and Render method
+</p>
+
 
 ===============
